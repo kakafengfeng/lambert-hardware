@@ -6,10 +6,10 @@ import { asset } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { label: "Products", href: "#products" },
-  { label: "Series", href: "#series" },
-  { label: "Why LAMBERT", href: "#why" },
-  { label: "Contact", href: "#contact" },
+  { label: "Products", href: "/products" },
+  { label: "Series", href: "/#series" },
+  { label: "Why LAMBERT", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -46,7 +46,7 @@ export function Header() {
           {NAV.map((item) => (
             <a
               key={item.href}
-              href={asset(`/${item.href}`)}
+              href={asset(item.href)}
               className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
             >
               {item.label}
@@ -56,7 +56,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href={asset("/#contact")}
+            href={asset("/contact")}
             className="hidden items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-all hover:bg-brass-deep active:scale-[0.97] md:inline-flex"
           >
             Request a Quote
@@ -77,7 +77,7 @@ export function Header() {
           {NAV.map((item) => (
             <a
               key={item.href}
-              href={asset(`/${item.href}`)}
+              href={asset(item.href)}
               onClick={() => setOpen(false)}
               className="block border-b border-line/60 py-3 text-sm font-medium text-ink-soft last:border-0"
             >
@@ -85,7 +85,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href={asset("/#contact")}
+            href={asset("/contact")}
             onClick={() => setOpen(false)}
             className="mt-3 flex items-center justify-center gap-1.5 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper"
           >

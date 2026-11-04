@@ -62,14 +62,14 @@ export function Hero() {
           <Reveal delay={240}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href={asset("/#products")}
+                href={asset("/products")}
                 className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:bg-brass-deep active:scale-[0.98]"
               >
                 Browse Products
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href={asset("/#contact")}
+                href={asset("/contact")}
                 className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-ink hover:text-paper active:scale-[0.98]"
               >
                 Request a Quote

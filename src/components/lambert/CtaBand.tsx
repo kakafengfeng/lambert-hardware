@@ -19,7 +19,7 @@ export function CtaBand() {
               inquiries only — pricing is quoted per project, never listed.
             </p>
             <a
-              href={asset("/#contact")}
+              href={asset("/contact")}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:bg-brass-deep active:scale-[0.98]"
             >
               Start an Inquiry

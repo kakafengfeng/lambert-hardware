@@ -19,13 +19,13 @@ export function Footer() {
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
                 Site
               </p>
-              <a href={asset("/#products")} className="text-ink-soft hover:text-ink">
+              <a href={asset("/products")} className="text-ink-soft hover:text-ink">
                 Products
               </a>
               <a href={asset("/#series")} className="text-ink-soft hover:text-ink">
                 Series
               </a>
-              <a href={asset("/#why")} className="text-ink-soft hover:text-ink">
+              <a href={asset("/about")} className="text-ink-soft hover:text-ink">
                 Why LAMBERT
               </a>
             </div>
@@ -33,10 +33,10 @@ export function Footer() {
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-mute">
                 Trade
               </p>
-              <a href={asset("/#contact")} className="text-ink-soft hover:text-ink">
+              <a href={asset("/contact")} className="text-ink-soft hover:text-ink">
                 Request a Quote
               </a>
-              <a href={asset("/#contact")} className="text-ink-soft hover:text-ink">
+              <a href={asset("/contact")} className="text-ink-soft hover:text-ink">
                 Contact
               </a>
             </div>

@@ -1,6 +1,7 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { asset } from "@/lib/site";
-import { PRODUCTS, type Product } from "@/data/products";
+import { PRODUCTS } from "@/data/products";
+import { ProductCard } from "./ProductCard";
 import { Reveal } from "./Reveal";
 
 const FEATURED_MODELS = [
@@ -13,47 +14,6 @@ const FEATURED_MODELS = [
   "11.02.1321", // seasoning drawer
   "05.08.1261", // slim basket
 ];
-
-function ProductCard({ product }: { product: Product }) {
-  const img = product.image ? asset(product.image) : asset("/images/placeholder.svg");
-  return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgb(27_23_18/0.25)]">
-      <div className="relative overflow-hidden bg-parchment">
-        <img
-          src={img}
-          alt={product.name}
-          className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-          loading="lazy"
-        />
-        {product.madeToOrder && (
-          <span className="absolute right-4 top-4 rounded-full bg-brass-wash px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-brass-deep">
-            MADE TO ORDER
-          </span>
-        )}
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <p className="font-mono text-[11px] font-semibold tracking-[0.14em] text-ink-mute">
-          {product.model}
-        </p>
-        <h3 className="mt-1.5 text-[15px] font-bold leading-snug tracking-tight text-ink">
-          {product.name}
-        </h3>
-        {product.spec && (
-          <p className="mt-1.5 font-mono text-xs text-ink-soft">{product.spec}</p>
-        )}
-        <div className="mt-auto pt-4">
-          <a
-            href={asset("/#contact")}
-            className="inline-flex items-center gap-1 text-sm font-semibold text-ink transition-colors hover:text-brass-deep"
-          >
-            Request Quote
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export function FeaturedProducts() {
   const featured = FEATURED_MODELS.map(
@@ -73,11 +33,13 @@ export function FeaturedProducts() {
                 The SKUs cabinet makers ask for first
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-ink-soft">
-              A selection from the 266-SKU catalog. Full product listings with
-              filters arrive in the next release — every item is quotable
-              today.
-            </p>
+            <a
+              href={asset("/products")}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink transition-colors hover:text-brass-deep"
+            >
+              Browse all 266 products
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </Reveal>
 
