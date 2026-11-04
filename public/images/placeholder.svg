@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f3efe7"/>
+  <g fill="none" stroke="#e5ded2" stroke-width="1">
+    <path d="M0 150h800M0 300h800M0 450h800M200 0v600M400 0v600M600 0v600"/>
+  </g>
+  <g fill="none" stroke="#a16207" stroke-width="2">
+    <rect x="330" y="230" width="140" height="140" rx="4"/>
+    <path d="M330 275h140M330 320h140M375 230v140M420 230v140"/>
+  </g>
+  <text x="400" y="420" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif"
+    font-size="28" font-weight="700" letter-spacing="8" fill="#1b1712">LAMBERT</text>
+  <text x="400" y="448" text-anchor="middle" font-family="ui-monospace, monospace"
+    font-size="13" letter-spacing="3" fill="#8a7f70">PRODUCT IMAGE COMING SOON</text>
+</svg>
