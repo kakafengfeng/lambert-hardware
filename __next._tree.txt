@@ -1,0 +1,5 @@
+:HL["/lambert-hardware/_next/static/chunks/2ttw4yks-aqzt.css","style"]
+:HL["/lambert-hardware/images/products/11.02.0011.webp","image"]
+:HL["/lambert-hardware/images/products/11.03.1011.webp","image"]
+:HL["/lambert-hardware/images/products/05.08.5212.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"CviK-89OUwMooq5KasTF2"}
