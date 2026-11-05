@@ -129,12 +129,20 @@ function InquiryForm() {
           Chat on WhatsApp
         </button>
       </div>
-      <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-ink-mute">
-        <Send className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-        Our email and WhatsApp are being set up — these buttons currently use
-        temporary placeholders ({PLACEHOLDER_EMAIL} · +{PLACEHOLDER_WHATSAPP}).
-        Trade inquiries only.
-      </p>
+      {CONTACT.email && CONTACT.whatsapp ? (
+        <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-ink-mute">
+          <Send className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          Your inquiry opens in your email app or WhatsApp — nothing is sent
+          until you hit send. Trade inquiries only.
+        </p>
+      ) : (
+        <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-ink-mute">
+          <Send className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          Our email and WhatsApp are being set up — these buttons currently use
+          temporary placeholders ({PLACEHOLDER_EMAIL} · +{PLACEHOLDER_WHATSAPP}).
+          Trade inquiries only.
+        </p>
+      )}
     </div>
   );
 }
