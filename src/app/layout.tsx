@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { FloatingButtons } from "@/components/lambert/FloatingButtons";
 
 export const metadata: Metadata = {
   title: "LAMBERT — Functional Hardware for Cabinet Makers",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="min-h-full bg-paper font-sans text-ink">
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );
