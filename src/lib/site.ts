@@ -19,7 +19,7 @@ export const CONTACT = {
   /** wa.me international format: country code + number, no plus/spaces. */
   whatsapp: "8617602191587",
   whatsappDisplay: "+86 176 0219 1587",
-  /** WeChat ID — not yet provided, floating button shows "coming soon". */
-  wechat: null as string | null,
+  /** WeChat ID — provided by the brand owner (2026-11-05). */
+  wechat: "zhangyanhui95",
   location: "Shanghai, China",
 } as const;
