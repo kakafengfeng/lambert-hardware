@@ -1,3 +1,3 @@
 :HL["/lambert-hardware/_next/static/chunks/3b22fz17aiqrl.css","style"]
 :HL["/lambert-hardware/images/products/18.04.1190.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"products","param":null,"prefetchHints":4192,"slots":{"children":{"name":"model","param":{"type":"d","key":"18.04.1190","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"Jn3YIChBLrKQs_1E0ht2u"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"products","param":null,"prefetchHints":4192,"slots":{"children":{"name":"model","param":{"type":"d","key":"18.04.1190","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"kf4Ku3iS_fckIbd11SnpH"}
