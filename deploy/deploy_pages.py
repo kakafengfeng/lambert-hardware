@@ -3,6 +3,7 @@ import base64
 import json
 import pathlib
 import sys
+import time
 import urllib.request
 
 sys.path.insert(0, "/opt/muse/skills/custom-connector-setup/bin")
@@ -41,6 +42,9 @@ def collect_files():
         rel = str(p.relative_to(OUT))
         if rel.startswith("sites/"):
             continue
+        # Skip Turbopack internal manifests ($ in name) — unneeded for static serving.
+        if "$" in rel:
+            continue
         if p.suffix not in (".html", ".js", ".css", ".txt", ".json", ".webp", ".png", ".jpg", ".jpeg", ".svg", ".ico") and p.name != ".nojekyll":
             continue
         files.append((rel, p.read_bytes()))
@@ -51,13 +55,25 @@ def main():
     files = collect_files()
     print(f"files: {len(files)}", flush=True)
 
-    # 1. create blobs
+    # 1. create blobs (retry transient failures, always naming the file)
     tree_entries = []
     for rel, raw in files:
-        blob = api("POST", f"/repos/{OWNER}/{REPO}/git/blobs",
-                   {"content": base64.b64encode(raw).decode(), "encoding": "base64"})
+        last_err = None
+        for attempt in range(5):
+            try:
+                blob = api("POST", f"/repos/{OWNER}/{REPO}/git/blobs",
+                           {"content": base64.b64encode(raw).decode(), "encoding": "base64"})
+                last_err = None
+                break
+            except Exception as exc:  # transient network/API errors
+                last_err = exc
+                print(f"  retry {attempt+1}/5 blob {rel}: {type(exc).__name__}: {str(exc)[:120]}", flush=True)
+                time.sleep(2 * (attempt + 1))
+        if last_err is not None:
+            raise RuntimeError(f"blob failed for {rel}: {last_err}")
         tree_entries.append({"path": rel, "mode": "100644", "type": "blob", "sha": blob["sha"]})
         print(f"  blob {rel} ({len(raw)//1024}KB)", flush=True)
+        time.sleep(0.2)  # be gentle with the API
 
     # 2. current gh-pages head (parent); create the ref on first deploy
     try:

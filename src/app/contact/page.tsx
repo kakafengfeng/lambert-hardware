@@ -10,9 +10,8 @@ import { CONTACT, asset } from "@/lib/site";
 import { getProduct } from "@/lib/catalog";
 
 /**
- * Contact channels are not yet provided by the brand owner.
- * These placeholders are wired into the buttons and clearly marked
- * in the UI — replace CONTACT.email / CONTACT.whatsapp in lib/site.ts.
+ * Contact channels — real details in CONTACT (lib/site.ts).
+ * Placeholders remain only as a fallback if CONTACT fields are null.
  */
 const PLACEHOLDER_EMAIL = "quotes@lambert.example";
 const PLACEHOLDER_WHATSAPP = "000000000000";
@@ -173,7 +172,7 @@ export default function ContactPage() {
                     <MessageCircle className="h-5 w-5 text-brass-deep" />
                   </span>
                   <span className="font-mono text-ink-mute">
-                    {CONTACT.whatsapp ?? "WhatsApp coming soon"}
+                    {CONTACT.whatsappDisplay ?? "WhatsApp coming soon"}
                   </span>
                 </li>
               </ul>

@@ -13,9 +13,11 @@ export const SITE = {
   liveUrl: "https://kakafengfeng.github.io/lambert-hardware/",
 } as const;
 
-/** Contact details are not yet provided — placeholders shown on site. */
+/** Contact details — provided by the brand owner (2026-11-05). */
 export const CONTACT = {
-  email: null as string | null,
-  whatsapp: null as string | null,
+  email: "kakapa871011@gmail.com",
+  /** wa.me international format: country code + number, no plus/spaces. */
+  whatsapp: "8617602191587",
+  whatsappDisplay: "+86 176 0219 1587",
   location: "Shanghai, China",
 } as const;

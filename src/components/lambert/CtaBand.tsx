@@ -51,7 +51,7 @@ export function CtaBand() {
                   <div>
                     <p className="text-sm font-semibold text-ink">WhatsApp</p>
                     <p className="mt-0.5 font-mono text-sm text-ink-mute">
-                      {CONTACT.whatsapp ?? "coming soon"}
+                      {CONTACT.whatsappDisplay ?? "coming soon"}
                     </p>
                   </div>
                 </li>
